@@ -1,0 +1,49 @@
+body {
+  background-color: #2196f3;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns:
+    auto
+    auto
+    auto
+    auto
+    auto
+    auto
+    auto
+    auto
+    auto
+    auto
+    auto
+    auto
+    auto
+    auto
+    auto
+    auto
+    auto
+    auto;
+  background-color: #2196f3;
+  padding: 10px;
+}
+.grid-container-b {
+  width: 71.2%;
+  margin-left: 234px;
+  display: grid;
+  grid-template-columns:
+    auto
+    auto
+    auto
+    auto
+    auto
+    auto
+    auto
+    auto
+    auto
+    auto
+    auto
+    auto
+    auto
+    auto;
+  padding: 10px;
+}

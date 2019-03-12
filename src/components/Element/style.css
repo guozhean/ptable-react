@@ -1,0 +1,35 @@
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 0px;
+  font-size: 30px;
+  text-align: center;
+  width: 76px;
+
+}
+
+.He {
+    grid-column: 18/18
+}
+.B{
+    grid-column: 13/13   
+}
+.Al{
+    grid-column: 13/13
+}
+
+
+.atomicnumber{
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.massnumber{
+  font-size: 20px;
+  padding: 0;
+  margin:  0;
+  border: 0;
+  text-align: center
+}
