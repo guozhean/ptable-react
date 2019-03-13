@@ -89,7 +89,7 @@ class App extends Component {
             })}
         </div>
 
-        <div class="grid-container-b p78">
+        <div class="grid-container-la">
           {elements
             .slice(57, 71)
             .concat(elements.slice(89, 103))
