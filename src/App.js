@@ -28,7 +28,8 @@ class App extends Component {
     this.setState({
       molecule: arr,
       formula: this.getformula(this.state.molecule),
-      molecular_weight: this.getmolecularweight(this.state.molecule)
+      molecular_weight: this.getmolecularweight(this.state.molecule),
+      mass_composition: this.getmasspercent(this.state.molecule)
     });
     console.log(arr);
   };
@@ -66,17 +67,45 @@ class App extends Component {
     return molecular_weight;
   };
 
+  getmasspercent = elements => {
+    let mass = {};
+    let totalMass = 0;
+    let mass_composition = "";
+
+    elements.map(element => {
+      totalMass += element.atomic_mass
+    });
+
+    elements.map(element => {
+      if (!mass[element.symbol]) {
+        mass[element.symbol] = ((element.atomic_mass / totalMass) * 100)
+      } else {
+        mass[element.symbol] += ((element.atomic_mass / totalMass) * 100) 
+      }
+    });
+
+    for (let key in mass) {
+      mass_composition += key;
+      mass_composition += " ";
+      mass_composition += mass[key].toFixed(2)+"%";
+      mass_composition += " ";
+    }
+
+    return mass_composition;
+  }
+
   render() {
     return (
       <div className="App">
 
 
-      <div className="display">
-      <h2>Molecule</h2>
-        <p>Formula: {this.state.formula}</p>
-        <p>Weight: {this.state.molecular_weight}</p>
+        <div className="display">
+          <h2>Molecule</h2>
+          <p>Formula: {this.state.formula}</p>
+          <p>Weight: {this.state.molecular_weight}</p>
+          <p>Mass Percent: {this.state.mass_composition}</p>
 
-      </div>
+        </div>
 
 
 
