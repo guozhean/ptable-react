@@ -80,15 +80,10 @@ class App extends Component {
     });
 
     for (let ele in mass) {
-      mass_composition += `${ele} ${mass[ele].toFixed(2)}% `;
+      mass_composition += `${ele} ${mass[ele].toFixed(2)}%, `;
     }
 
     return mass_composition;
-  };
-
-  parsemolecule = () => {
-    const userInput = this.state.molecule_input;
-    return userInput;
   };
 
   render() {
@@ -96,9 +91,9 @@ class App extends Component {
       <div className="App">
         {/* molecule info display */}
         <div className="display">
-          <span>Molecule: </span>
-          <input name="molecule_input" onChange={this.parsemolecule} />
-          <p>Formula: {this.state.formula}</p>
+          <h3>Molecule: {this.state.formula} </h3>
+
+          <p>Click on an element to add it to the molecule.</p>
           <p>
             Weight:{" "}
             {this.state.molecular_weight
