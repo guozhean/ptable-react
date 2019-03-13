@@ -6,17 +6,13 @@ import "./App.css";
 const elements = elementsJSON.elements;
 
 class App extends Component {
-  state = {
-    molecule: []
-  };
+  state = { molecule: [] };
 
   handleInputChange = event => {
     let value = event.target.value;
     const name = event.target.name;
 
-    this.setState({
-      [name]: value
-    });
+    this.setState({ [name]: value });
   };
 
   addtomolecule = element => {
@@ -37,9 +33,9 @@ class App extends Component {
 
     elements.map(element => {
       if (!count[element.symbol]) {
-        count[element.symbol] = 1;
+        return (count[element.symbol] = 1);
       } else {
-        count[element.symbol]++;
+        return count[element.symbol]++;
       }
     });
 
@@ -58,7 +54,7 @@ class App extends Component {
     let molecular_weight = 0;
 
     elements.map(element => {
-      molecular_weight += element.atomic_mass;
+      return (molecular_weight += element.atomic_mass);
     });
 
     return molecular_weight;
@@ -70,16 +66,16 @@ class App extends Component {
     let mass_composition = "";
 
     elements.map(element => {
-      molecular_weight += element.atomic_mass;
+      return (molecular_weight += element.atomic_mass);
     });
 
     elements.map(element => {
       const proportion = (element.atomic_mass / molecular_weight) * 100;
 
       if (!mass[element.symbol]) {
-        mass[element.symbol] = proportion;
+        return (mass[element.symbol] = proportion);
       } else {
-        mass[element.symbol] += proportion;
+        return (mass[element.symbol] += proportion);
       }
     });
 
@@ -90,24 +86,30 @@ class App extends Component {
     return mass_composition;
   };
 
+  parsemolecule = () => {
+    const userInput = this.state.molecule_input;
+    return userInput;
+  };
+
   render() {
     return (
       <div className="App">
         {/* molecule info display */}
         <div className="display">
-          <h2>Molecule</h2>
+          <span>Molecule: </span>
+          <input name="molecule_input" onChange={this.parsemolecule} />
           <p>Formula: {this.state.formula}</p>
           <p>
             Weight:{" "}
             {this.state.molecular_weight
-              ? this.state.molecular_weight.toFixed(3)
+              ? this.state.molecular_weight.toFixed(3) + " g/mol"
               : null}
           </p>
           <p>Mass Percent: {this.state.mass_composition}</p>
         </div>
 
         {/* main table */}
-        <div class="grid-container">
+        <div class="grid-container-main">
           {elements
             .slice(0, 57)
             .concat(elements.slice(71, 89), elements.slice(103, -1))
