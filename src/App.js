@@ -7,8 +7,7 @@ const elements = elementsJSON.elements;
 
 class App extends Component {
   state = {
-    molecule: [],
-    formula: ""
+    molecule: []
   };
 
   handleInputChange = event => {
@@ -45,6 +44,7 @@ class App extends Component {
         count[element.symbol]++;
       }
     });
+
     for (let key in count) {
       formula += key;
 
@@ -69,45 +69,44 @@ class App extends Component {
 
   getmasspercent = elements => {
     let mass = {};
-    let totalMass = 0;
+    let molecular_weight = 0;
     let mass_composition = "";
 
     elements.map(element => {
-      totalMass += element.atomic_mass
+      molecular_weight += element.atomic_mass;
     });
 
     elements.map(element => {
+      const proportion = (element.atomic_mass / molecular_weight) * 100;
+
       if (!mass[element.symbol]) {
-        mass[element.symbol] = ((element.atomic_mass / totalMass) * 100)
+        mass[element.symbol] = proportion;
       } else {
-        mass[element.symbol] += ((element.atomic_mass / totalMass) * 100) 
+        mass[element.symbol] += proportion;
       }
     });
 
-    for (let key in mass) {
-      mass_composition += key;
-      mass_composition += " ";
-      mass_composition += mass[key].toFixed(2)+"%";
-      mass_composition += " ";
+    for (let ele in mass) {
+      mass_composition += `${ele} ${mass[ele].toFixed(2)}% `;
     }
 
     return mass_composition;
-  }
+  };
 
   render() {
     return (
       <div className="App">
-
-
         <div className="display">
           <h2>Molecule</h2>
           <p>Formula: {this.state.formula}</p>
-          <p>Weight: {this.state.molecular_weight}</p>
+          <p>
+            Weight:{" "}
+            {this.state.molecular_weight
+              ? this.state.molecular_weight.toFixed(3)
+              : null}
+          </p>
           <p>Mass Percent: {this.state.mass_composition}</p>
-
         </div>
-
-
 
         <div class="grid-container">
           {elements
