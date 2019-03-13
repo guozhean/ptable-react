@@ -69,9 +69,17 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <p>Formula: {this.state.formula}</p>
 
-        <p>Molecular Weight: {this.state.molecular_weight}</p>
+
+      <div className="display">
+      <h2>Molecule</h2>
+        <p>Formula: {this.state.formula}</p>
+        <p>Weight: {this.state.molecular_weight}</p>
+
+      </div>
+
+
+
         <div class="grid-container">
           {elements
             .slice(0, 57)

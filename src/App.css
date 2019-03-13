@@ -47,3 +47,10 @@ body {
     auto;
   padding: 10px;
 }
+
+.display {
+  background: white;
+  width: 100%;
+  padding: 1rem;
+  
+}
