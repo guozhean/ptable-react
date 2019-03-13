@@ -3,18 +3,18 @@ body {
 }
 
 .display {
-  margin-top: -11rem;
+  margin-top: -8rem;
   background: white;
   width: 100%;
   padding: 1rem 8rem 0 1rem;
   margin-left: -1rem;
   position: fixed;
   display: grid;
-  grid-template-columns: 25% auto
+  grid-template-columns: 33% auto
 }
 
 .grid-container-main {
-  margin-top: 11rem;
+  margin-top: 7rem;
   display: grid;
   grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
   padding: 24px;

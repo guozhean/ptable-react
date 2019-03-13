@@ -7,7 +7,7 @@ function Element(props) {
       onClick={() => {
         props.add(props.element);
       }}
-      class={`grid-item ${props.element.symbol} `}
+      class={`element ${props.element.symbol} `}
     >
       <p class="atomicnumber">{props.element.number}</p>
       {props.element.symbol}
