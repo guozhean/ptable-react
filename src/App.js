@@ -11,11 +11,9 @@ class App extends Component {
   };
 
   handleInputChange = event => {
-    // Getting the value and name of the input which triggered the change
     let value = event.target.value;
     const name = event.target.name;
 
-    // Updating the input's state
     this.setState({
       [name]: value
     });
@@ -24,13 +22,13 @@ class App extends Component {
   addtomolecule = element => {
     const arr = this.state.molecule;
     arr.push(element);
+
     this.setState({
       molecule: arr,
-      formula: this.getformula(this.state.molecule),
-      molecular_weight: this.getmolecularweight(this.state.molecule),
-      mass_composition: this.getmasspercent(this.state.molecule)
+      formula: this.getformula(arr),
+      molecular_weight: this.getmolecularweight(arr),
+      mass_composition: this.getmasspercent(arr)
     });
-    console.log(arr);
   };
 
   getformula = elements => {
@@ -45,12 +43,11 @@ class App extends Component {
       }
     });
 
-    for (let key in count) {
-      formula += key;
-
-      if (count[key] === 1) {
+    for (let ele in count) {
+      formula += ele;
+      if (count[ele] === 1) {
       } else {
-        formula += count[key];
+        formula += count[ele];
       }
     }
 
@@ -96,6 +93,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        {/* molecule info display */}
         <div className="display">
           <h2>Molecule</h2>
           <p>Formula: {this.state.formula}</p>
@@ -108,6 +106,7 @@ class App extends Component {
           <p>Mass Percent: {this.state.mass_composition}</p>
         </div>
 
+        {/* main table */}
         <div class="grid-container">
           {elements
             .slice(0, 57)
@@ -117,12 +116,13 @@ class App extends Component {
             })}
         </div>
 
+        {/* lanthanine series */}
         <div class="grid-container-la">
           {elements
             .slice(57, 71)
             .concat(elements.slice(89, 103))
             .map(element => {
-              return <Element element={element} />;
+              return <Element element={element} add={this.addtomolecule} />;
             })}
         </div>
       </div>
