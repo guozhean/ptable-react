@@ -2,21 +2,26 @@ body {
   background-color: #2196f3;
 }
 
+.display {
+  margin-top: -11rem;
+  background: white;
+  width: 100%;
+  padding: 1rem;
+  margin-left: -1rem;
+  position: fixed;
+}
+
 .grid-container-main {
+  margin-top: 11rem;
   display: grid;
   grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
-  padding: 5px;
+  padding: 24px;
 }
 .grid-container-la {
   display: grid;
   grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
   width: 71.2%;
   margin-left: 236px;
-  padding: 5px;
+  padding: 18px;
 }
 
-.display {
-  background: white;
-  width: 100%;
-  padding: 1rem;
-}
