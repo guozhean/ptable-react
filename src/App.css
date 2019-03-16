@@ -15,7 +15,7 @@ body {
   display: grid;
   grid-template-columns: auto auto auto;
 }
-.col{
+.col {
   margin: 0.2rem 0.8rem;
 }
 @media only screen and (max-width: 800px) {
@@ -30,15 +30,19 @@ body {
   grid-template-columns: 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw;
   padding: 0;
 }
+.grid-container-la {
+  display: grid;
+  grid-template-columns: 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw;
+  margin-left: 236px;
+  padding: 18px 0;
+  width: 71.2%;
+}
+
 @media only screen and (max-width: 1190px) {
   .grid-container-main {
     grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
   }
-}
-.grid-container-la {
-  display: grid;
-  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
-  width: 71.2%;
-  margin-left: 236px;
-  padding: 18px;
+  .grid-container-la {
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto
+  }
 }
