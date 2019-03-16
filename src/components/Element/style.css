@@ -1,35 +1,85 @@
-.grid-item {
+.element {
   background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.8);
   padding: 0px;
-  font-size: 30px;
+  font-size: 26px;
   text-align: center;
-  width: 76px;
-
+  width: 100%;
 }
 
-.He {
-    grid-column: 18/18
-}
-.B{
-    grid-column: 13/13   
-}
-.Al{
-    grid-column: 13/13
+@media only screen and (max-width: 1190px) {
+  .element {
+    width: 66px;
+  }
 }
 
-
-.atomicnumber{
+.atomicnumber {
   font-size: 20px;
   padding: 0;
   margin: 0;
   border: 0;
 }
 
-.massnumber{
+.massnumber {
   font-size: 20px;
   padding: 0;
   margin:  0;
   border: 0;
-  text-align: center
 }
+
+/* that space in the top middle of the table */
+.He {grid-column: 18/18}
+.B {grid-column: 13/13}
+.Al {grid-column: 13/13}
+
+/* hydrogen */
+.H {
+  background: gold;
+}
+
+/* nobel gasses */
+.He, .Ne, .Ar, .Kr, .Xe, .Rn {
+  background: whitesmoke;
+}
+
+/* alkalai metals */
+.Li, .Na, .K, .Rb, .Cs, .Fr {
+  background: yellow;
+}
+
+/* alkalai earth metals */
+.Be, .Mg, .Ca, .Sr, .Ba, .Ra {
+  background: orange;
+}
+
+/* transition metals */
+.Sc, .Ti, .V, .Cr, .Mn, .Fe, .Co, .Ni, .Cu, .Zn, .Y, .Zr, .Nb, .Mo, .Tc, .Ru, .Rh, .Pd, .Ag, .Cd, .Hf, .Ta, .W, .Re, .Os, .Ir, .Pt, .Au, .Hg, .Rf, .Db, .Sg, .Bh, .Hs, .Cn {
+  background: silver;
+}
+
+/* metalloids */
+.B, .Si, .Ge, .As, .Sb, .Te, .At {
+  background: lightgreen;
+}
+
+/* non metals */
+.C, .N, .O, .F, .P, .S, .Cl, .Se, .Br, .I {
+  background: bisque;
+}
+
+/* post transition metals */
+.Al, .Ga, .In, .Sn, .Tl, .Pb, .Bi, .Po, .Fl {
+  background: turquoise;
+}
+
+/* lanthanum series  */
+.La, .Ce, .Pr, .Nd, .Pm, .Sm, .Eu, .Gd, .Tb, .Dy, .Ho, .Er, .Tm, .Yb, .Lu {
+  background: violet
+}
+
+/* actinium series */
+.Ac, .Th, .Pa, .U, .Np, .Pu, .Am, .Cm, .Bk, .Cf, .Es, .Fm, .Md, .No, .Lr {
+  background: salmon
+}
+
+
