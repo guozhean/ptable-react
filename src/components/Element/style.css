@@ -34,52 +34,52 @@
 
 /* hydrogen */
 .H {
-  background: gold;
+  background: #c3dea7;
 }
 
 /* nobel gasses */
 .He, .Ne, .Ar, .Kr, .Xe, .Rn {
-  background: whitesmoke;
+  background: #f3607b;
 }
 
 /* alkalai metals */
 .Li, .Na, .K, .Rb, .Cs, .Fr {
-  background: yellow;
+  background: #15995d;
 }
 
 /* alkalai earth metals */
 .Be, .Mg, .Ca, .Sr, .Ba, .Ra {
-  background: orange;
+  background: #9cb65e;
 }
 
 /* transition metals */
 .Sc, .Ti, .V, .Cr, .Mn, .Fe, .Co, .Ni, .Cu, .Zn, .Y, .Zr, .Nb, .Mo, .Tc, .Ru, .Rh, .Pd, .Ag, .Cd, .Hf, .Ta, .W, .Re, .Os, .Ir, .Pt, .Au, .Hg, .Rf, .Db, .Sg, .Bh, .Hs, .Cn {
-  background: silver;
+  background: #a784ec;
 }
 
 /* metalloids */
 .B, .Si, .Ge, .As, .Sb, .Te, .At {
-  background: lightgreen;
+  background: #27bfcd;
 }
 
 /* non metals */
 .C, .N, .O, .F, .P, .S, .Cl, .Se, .Br, .I {
-  background: bisque;
+  background: #c3dea7;
 }
 
 /* post transition metals */
 .Al, .Ga, .In, .Sn, .Tl, .Pb, .Bi, .Po, .Fl {
-  background: turquoise;
+  background: #f3d47f
 }
 
 /* lanthanum series  */
 .La, .Ce, .Pr, .Nd, .Pm, .Sm, .Eu, .Gd, .Tb, .Dy, .Ho, .Er, .Tm, .Yb, .Lu {
-  background: violet
+  background: #f37dba
 }
 
 /* actinium series */
 .Ac, .Th, .Pa, .U, .Np, .Pu, .Am, .Cm, .Bk, .Cf, .Es, .Fm, .Md, .No, .Lr {
-  background: salmon
+  background: #faa8c4
 }
 
 

@@ -1,5 +1,5 @@
 body {
-  background-color: #2196f3;
+  background-color: #7abaee;
 }
 
 .display {
@@ -41,4 +41,12 @@ body {
   width: 71.2%;
   margin-left: 236px;
   padding: 18px;
+}
+
+button{
+  float: right;
+  margin: 30px;
+  width: auto;
+  background-color: #7abaee;
+  font-size: 100%;
 }
