@@ -28,23 +28,17 @@ class App extends Component {
   };
 
   getformula = elements => {
-    let count = {};
-    let formula = "";
+    let count = {},
+      formula = "";
 
-    elements.map(element => {
-      if (!count[element.symbol]) {
-        return (count[element.symbol] = 1);
-      } else {
-        return count[element.symbol]++;
-      }
+    elements.forEach(element => {
+      if (!count[element.symbol]) count[element.symbol] = 1;
+      else count[element.symbol]++;
     });
 
     for (let ele in count) {
       formula += ele;
-      if (count[ele] === 1) {
-      } else {
-        formula += count[ele];
-      }
+      if (count[ele] !== 1) formula += count[ele];
     }
 
     return formula;
@@ -53,30 +47,26 @@ class App extends Component {
   getmolecularweight = elements => {
     let molecular_weight = 0;
 
-    elements.map(element => {
-      return (molecular_weight += element.atomic_mass);
-    });
+    elements.forEach(element => (molecular_weight += element.atomic_mass));
 
     return molecular_weight;
   };
 
   getmasspercent = elements => {
-    let mass = {};
-    let molecular_weight = 0;
-    let mass_composition = "";
-    elements.map(element => {
-      return (molecular_weight += element.atomic_mass);
-    });
-    elements.map(element => {
+    let mass = {},
+      molecular_weight = 0,
+      mass_composition = "";
+
+    elements.forEach(element => (molecular_weight += element.atomic_mass));
+
+    elements.forEach(element => {
       const proportion = (element.atomic_mass / molecular_weight) * 100;
-      if (!mass[element.symbol]) {
-        return (mass[element.symbol] = proportion);
-      } else {
-        return (mass[element.symbol] += proportion);
-      }
+
+      if (!mass[element.symbol]) mass[element.symbol] = proportion;
+      else mass[element.symbol] += proportion;
     });
     for (let ele in mass) {
-      mass_composition += `${ele} ${mass[ele].toFixed(2)}%, `;
+      mass_composition += `${ele}-${mass[ele].toFixed(2)}%, `;
     }
     return mass_composition;
   };
@@ -119,9 +109,9 @@ class App extends Component {
             {elements
               .slice(0, 57)
               .concat(elements.slice(71, 89), elements.slice(103, -1))
-              .map(element => {
-                return <Element element={element} add={this.addtomolecule} />;
-              })}
+              .map(element => (
+                <Element element={element} add={this.addtomolecule} />
+              ))}
           </div>
 
           {/* lanthanine series */}
@@ -129,9 +119,9 @@ class App extends Component {
             {elements
               .slice(57, 71)
               .concat(elements.slice(89, 103))
-              .map(element => {
-                return <Element element={element} add={this.addtomolecule} />;
-              })}
+              .map(element => (
+                <Element element={element} add={this.addtomolecule} />
+              ))}
           </div>
         </div>
       </div>
