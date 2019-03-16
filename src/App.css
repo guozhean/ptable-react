@@ -3,21 +3,37 @@ body {
 }
 
 .display {
-  margin-top: -8rem;
+  margin-top: -11rem;
   background: white;
   width: 100%;
   padding: 1rem 8rem 0 1rem;
   margin-left: -1rem;
   position: fixed;
+}
+
+.columns-3 {
   display: grid;
-  grid-template-columns: 33% auto
+  grid-template-columns: auto auto auto;
+}
+.col{
+  margin: 0.2rem 0.8rem;
+}
+@media only screen and (max-width: 800px) {
+  .columns-3 {
+    grid-template-columns: auto;
+  }
 }
 
 .grid-container-main {
-  margin-top: 7rem;
+  margin-top: 10rem;
   display: grid;
-  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
-  padding: 24px;
+  grid-template-columns: 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw;
+  padding: 0;
+}
+@media only screen and (max-width: 1190px) {
+  .grid-container-main {
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+  }
 }
 .grid-container-la {
   display: grid;

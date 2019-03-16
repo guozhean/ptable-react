@@ -4,7 +4,13 @@
   padding: 0px;
   font-size: 26px;
   text-align: center;
-  width: 74px;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1190px) {
+  .element {
+    width: 66px;
+  }
 }
 
 .atomicnumber {
