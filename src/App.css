@@ -1,5 +1,5 @@
 body {
-  background-color: #2196f3;
+  background-color: #7abaee;
 }
 
 .display {
@@ -51,4 +51,12 @@ body {
   .grid-container-la {
     grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
   }
+}
+
+button{
+  float: right;
+  margin: 30px;
+  width: auto;
+  background-color: #7abaee;
+  font-size: 100%;
 }

@@ -65,21 +65,28 @@ class App extends Component {
       if (!mass[element.symbol]) mass[element.symbol] = proportion;
       else mass[element.symbol] += proportion;
     });
-
     for (let ele in mass) {
       mass_composition += `${ele}-${mass[ele].toFixed(2)}%, `;
     }
-
     return mass_composition;
   };
+
+  resetState = () =>{
+    this.setState({
+      molecule: [],
+      formula: "",
+      molecular_weight: 0,
+      mass_composition: ""
+    });
+  }
 
   render() {
     return (
       <div className="App">
         {/* molecule info display */}
         <div className="display">
+        <button onClick={this.resetState}>Reset</button>
           <h3>Periodic Table</h3>
-
           <p>Click on an element to add it to the molecule.</p>
 
           <div class="columns-3">
@@ -92,7 +99,9 @@ class App extends Component {
             </p>
             <p class="col">Mass Percent: {this.state.mass_composition}</p>
           </div>
+         
         </div>
+        
 
         {/* main table */}
         <div class="ptable">
