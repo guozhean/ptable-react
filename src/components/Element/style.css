@@ -17,7 +17,7 @@
   opacity: 0.9;
 }
 .element:active {
-  background-color: #2196f3;
+  background-color: #7abaee;
 }
 
 .atomicnumber {
@@ -51,150 +51,6 @@
 }
 
 /* nobel gasses */
-<<<<<<< HEAD
-.He,
-.Ne,
-.Ar,
-.Kr,
-.Xe,
-.Rn {
-  background: whitesmoke;
-}
-
-/* alkalai metals */
-.Li,
-.Na,
-.K,
-.Rb,
-.Cs,
-.Fr {
-  background: yellow;
-}
-
-/* alkalai earth metals */
-.Be,
-.Mg,
-.Ca,
-.Sr,
-.Ba,
-.Ra {
-  background: orange;
-}
-
-/* transition metals */
-.Sc,
-.Ti,
-.V,
-.Cr,
-.Mn,
-.Fe,
-.Co,
-.Ni,
-.Cu,
-.Zn,
-.Y,
-.Zr,
-.Nb,
-.Mo,
-.Tc,
-.Ru,
-.Rh,
-.Pd,
-.Ag,
-.Cd,
-.Hf,
-.Ta,
-.W,
-.Re,
-.Os,
-.Ir,
-.Pt,
-.Au,
-.Hg,
-.Rf,
-.Db,
-.Sg,
-.Bh,
-.Hs,
-.Cn {
-  background: silver;
-}
-
-/* metalloids */
-.B,
-.Si,
-.Ge,
-.As,
-.Sb,
-.Te,
-.At {
-  background: lightgreen;
-}
-
-/* non metals */
-.C,
-.N,
-.O,
-.F,
-.P,
-.S,
-.Cl,
-.Se,
-.Br,
-.I {
-  background: bisque;
-}
-
-/* post transition metals */
-.Al,
-.Ga,
-.In,
-.Sn,
-.Tl,
-.Pb,
-.Bi,
-.Po,
-.Fl {
-  background: turquoise;
-}
-
-/* lanthanum series  */
-.La,
-.Ce,
-.Pr,
-.Nd,
-.Pm,
-.Sm,
-.Eu,
-.Gd,
-.Tb,
-.Dy,
-.Ho,
-.Er,
-.Tm,
-.Yb,
-.Lu {
-  background: violet;
-}
-
-/* actinium series */
-.Ac,
-.Th,
-.Pa,
-.U,
-.Np,
-.Pu,
-.Am,
-.Cm,
-.Bk,
-.Cf,
-.Es,
-.Fm,
-.Md,
-.No,
-.Lr {
-  background: salmon;
-=======
 .He, .Ne, .Ar, .Kr, .Xe, .Rn {
   background: #f3607b;
 }
@@ -237,5 +93,4 @@
 /* actinium series */
 .Ac, .Th, .Pa, .U, .Np, .Pu, .Am, .Cm, .Bk, .Cf, .Es, .Fm, .Md, .No, .Lr {
   background: #faa8c4
->>>>>>> 8e9d4f16c93dab2ed36752ab3d19617220d01ed0
 }
