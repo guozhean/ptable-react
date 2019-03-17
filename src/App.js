@@ -86,7 +86,7 @@ class App extends Component {
         {/* molecule info display */}
         <div className="display">
         <button onClick={this.resetState}>Reset</button>
-          <h3>Periodic Table</h3>
+          <h1>Periodic Table</h1>
           <p>Click on an element to add it to the molecule.</p>
 
           <div class="columns-3">
@@ -99,7 +99,6 @@ class App extends Component {
             </p>
             <p class="col">Mass Percent: {this.state.mass_composition}</p>
           </div>
-         
         </div>
         
 

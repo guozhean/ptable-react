@@ -9,6 +9,8 @@ body {
   padding: 1rem 8rem 0 1rem;
   margin-left: -1rem;
   position: fixed;
+  border-bottom-color: black;
+  border: solid 2px;
 }
 
 .columns-3 {
@@ -34,10 +36,10 @@ body {
 }
 @media only screen and (max-width: 800px) {
   .display {
-    margin-top: -13rem;
+    margin-top: -16rem;
   }
   .grid-container-main {
-    margin-top: 12rem;
+    margin-top: 15rem;
   }
   .columns-3 {
     grid-template-columns: auto;
@@ -53,10 +55,17 @@ body {
   }
 }
 
-button{
+button {
   float: right;
-  margin: 30px;
+  margin: 1rem 2rem;
+  padding: 0.7rem 1.3rem;
+  border: solid black;
+  border-radius: 0.5rem;
   width: auto;
-  background-color: #7abaee;
+  background: #f3607b;
   font-size: 100%;
+}
+
+button:focus {
+  outline-color: black;
 }
