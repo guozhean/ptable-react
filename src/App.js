@@ -87,7 +87,7 @@ class App extends Component {
         <div className="display">
           <button onClick={this.resetState}>Reset</button>
           <h1>Periodic Table</h1>
-          <p>Click elements below to create a molecule.</p>
+          <p>Click elements below to create a molecule. Molecular weight and each element's percent composition by mass will be calculated.</p>
 
           <div class="columns-3">
             <p class="col">Formula: {this.state.formula}</p>
