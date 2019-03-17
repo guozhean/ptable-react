@@ -14,7 +14,8 @@
 }
 
 .element:hover {
-  opacity: 0.9;
+  opacity: 0.8;
+
 }
 .element:active {
   background-color: #7abaee;
