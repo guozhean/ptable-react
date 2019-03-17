@@ -71,28 +71,28 @@ class App extends Component {
     return mass_composition;
   };
 
-  resetState = () =>{
+  resetState = () => {
     this.setState({
       molecule: [],
       formula: "",
       molecular_weight: 0,
       mass_composition: ""
     });
-  }
+  };
 
   render() {
     return (
       <div className="App">
         {/* molecule info display */}
         <div className="display">
-        <button onClick={this.resetState}>Reset</button>
+          <button onClick={this.resetState}>Reset</button>
           <h1>Periodic Table</h1>
           <p>Click on an element to add it to the molecule.</p>
 
           <div class="columns-3">
             <p class="col">Formula: {this.state.formula}</p>
             <p class="col">
-              Weight:{" "}
+              Weight:
               {this.state.molecular_weight
                 ? this.state.molecular_weight.toFixed(3) + " g/mol"
                 : null}
@@ -100,7 +100,6 @@ class App extends Component {
             <p class="col">Mass Percent: {this.state.mass_composition}</p>
           </div>
         </div>
-        
 
         {/* main table */}
         <div class="ptable">

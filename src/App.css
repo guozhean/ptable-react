@@ -24,12 +24,12 @@ body {
 .grid-container-main {
   margin-top: 10rem;
   display: grid;
-  grid-template-columns: 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw;
+  grid-template-columns: 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw;
   padding: 0;
 }
 .grid-container-la {
   display: grid;
-  grid-template-columns: 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw 5.5vw;
+  grid-template-columns: 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw;
   margin-left: 236px;
   padding: 18px 0;
   width: 71.2%;
@@ -61,9 +61,16 @@ button {
   padding: 0.7rem 1.3rem;
   border: solid black;
   border-radius: 0.5rem;
-  width: auto;
+  font-size: 1rem;
   background: #f3607b;
-  font-size: 100%;
+}
+button:hover {
+  opacity: 0.8;
+}
+
+button:active {
+  background: #f3607bac;
+  opacity: 1;
 }
 
 button:focus {

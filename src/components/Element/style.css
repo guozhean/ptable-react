@@ -9,7 +9,7 @@
 
 @media only screen and (max-width: 1190px) {
   .element {
-    width: 64px;
+    width: 60px;
   }
 }
 
@@ -51,46 +51,146 @@
 }
 
 /* nobel gasses */
-.He, .Ne, .Ar, .Kr, .Xe, .Rn {
+.He,
+.Ne,
+.Ar,
+.Kr,
+.Xe,
+.Rn {
   background: #f3607b;
 }
 
 /* alkalai metals */
-.Li, .Na, .K, .Rb, .Cs, .Fr {
+.Li,
+.Na,
+.K,
+.Rb,
+.Cs,
+.Fr {
   background: #15995d;
 }
 
 /* alkalai earth metals */
-.Be, .Mg, .Ca, .Sr, .Ba, .Ra {
+.Be,
+.Mg,
+.Ca,
+.Sr,
+.Ba,
+.Ra {
   background: #9cb65e;
 }
 
 /* transition metals */
-.Sc, .Ti, .V, .Cr, .Mn, .Fe, .Co, .Ni, .Cu, .Zn, .Y, .Zr, .Nb, .Mo, .Tc, .Ru, .Rh, .Pd, .Ag, .Cd, .Hf, .Ta, .W, .Re, .Os, .Ir, .Pt, .Au, .Hg, .Rf, .Db, .Sg, .Bh, .Hs, .Cn {
+.Sc,
+.Ti,
+.V,
+.Cr,
+.Mn,
+.Fe,
+.Co,
+.Ni,
+.Cu,
+.Zn,
+.Y,
+.Zr,
+.Nb,
+.Mo,
+.Tc,
+.Ru,
+.Rh,
+.Pd,
+.Ag,
+.Cd,
+.Hf,
+.Ta,
+.W,
+.Re,
+.Os,
+.Ir,
+.Pt,
+.Au,
+.Hg,
+.Rf,
+.Db,
+.Sg,
+.Bh,
+.Hs,
+.Cn {
   background: #a784ec;
 }
 
 /* metalloids */
-.B, .Si, .Ge, .As, .Sb, .Te, .At {
+.B,
+.Si,
+.Ge,
+.As,
+.Sb,
+.Te,
+.At {
   background: #27bfcd;
 }
 
 /* non metals */
-.C, .N, .O, .F, .P, .S, .Cl, .Se, .Br, .I {
+.C,
+.N,
+.O,
+.F,
+.P,
+.S,
+.Cl,
+.Se,
+.Br,
+.I {
   background: #c3dea7;
 }
 
 /* post transition metals */
-.Al, .Ga, .In, .Sn, .Tl, .Pb, .Bi, .Po, .Fl {
-  background: #f3d47f
+.Al,
+.Ga,
+.In,
+.Sn,
+.Tl,
+.Pb,
+.Bi,
+.Po,
+.Fl {
+  background: #f3d47f;
 }
 
 /* lanthanum series  */
-.La, .Ce, .Pr, .Nd, .Pm, .Sm, .Eu, .Gd, .Tb, .Dy, .Ho, .Er, .Tm, .Yb, .Lu {
-  background: #f37dba
+.La,
+.Ce,
+.Pr,
+.Nd,
+.Pm,
+.Sm,
+.Eu,
+.Gd,
+.Tb,
+.Dy,
+.Ho,
+.Er,
+.Tm,
+.Yb,
+.Lu {
+  background: #f37dba;
 }
 
 /* actinium series */
-.Ac, .Th, .Pa, .U, .Np, .Pu, .Am, .Cm, .Bk, .Cf, .Es, .Fm, .Md, .No, .Lr {
-  background: #faa8c4
+.Ac,
+.Th,
+.Pa,
+.U,
+.Np,
+.Pu,
+.Am,
+.Cm,
+.Bk,
+.Cf,
+.Es,
+.Fm,
+.Md,
+.No,
+.Lr {
+  background: #faa8c4;
 }
