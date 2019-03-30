@@ -6,7 +6,7 @@ import "./App.css";
 const elements = elementsJSON.elements;
 
 class App extends Component {
-  state = { molecule: [] };
+  state = { molecule: [], molecular_weight: 0, grams: 0, moles: 1 };
 
   handleInputChange = event => {
     let value = event.target.value;
@@ -14,16 +14,33 @@ class App extends Component {
 
     this.setState({ [name]: value });
   };
+  inputGrams = event => {
+    let value = event.target.value;
+    const name = event.target.name;
+
+    this.setState({ [name]: value });
+    this.setState({ moles: value / this.state.molecular_weight });
+  };
+  inputMoles = event => {
+    let value = event.target.value;
+    const name = event.target.name;
+
+    this.setState({ [name]: value });
+    this.setState({ grams: value * this.state.molecular_weight });
+  };
 
   addtomolecule = element => {
     const arr = this.state.molecule;
     arr.push(element);
 
+    let molecular_weight = this.getmolecularweight(arr);
+
     this.setState({
       molecule: arr,
       formula: this.getformula(arr),
-      molecular_weight: this.getmolecularweight(arr),
-      mass_composition: this.getmasspercent(arr)
+      molecular_weight: molecular_weight,
+      mass_composition: this.getmasspercent(arr),
+      grams: this.state.moles * molecular_weight
     });
   };
 
@@ -87,7 +104,10 @@ class App extends Component {
         <div className="display">
           <button onClick={this.resetState}>Reset</button>
           <h1>Periodic Table</h1>
-          <p>Click elements below to create a molecule. Molecular weight and each element's percent composition by mass will be calculated.</p>
+          <p>
+            Click elements below to create a molecule. Molecular weight and each
+            element's percent composition by mass will be calculated.
+          </p>
 
           <div class="columns-3">
             <p class="col">Formula: {this.state.formula}</p>
@@ -98,6 +118,26 @@ class App extends Component {
                 : null}
             </p>
             <p class="col">Mass Percent: {this.state.mass_composition}</p>
+            <div>
+              <span class="col">
+                Moles:
+                <input
+                  onChange={this.inputMoles}
+                  name="moles"
+                  value={this.state.moles}
+                  type="number"
+                />
+              </span>
+              <span class="col">
+                Grams:
+                <input
+                  onChange={this.inputGrams}
+                  name="grams"
+                  value={this.state.grams}
+                  type="number"
+                />
+              </span>
+            </div>
           </div>
         </div>
 
