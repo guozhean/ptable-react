@@ -2,27 +2,8 @@ body {
   background-color: #7abaee;
 }
 
-.display {
-  margin-top: -11rem;
-  background: white;
-  width: 100%;
-  padding: 1rem 8rem 0 1rem;
-  margin-left: -1rem;
-  position: fixed;
-  border-bottom-color: black;
-  border: solid 2px;
-}
-
-.columns-3 {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-.col {
-  margin: 0.2rem 0.8rem;
-}
-
 .grid-container-main {
-  margin-top: 10rem;
+  margin-top: 1rem;
   display: grid;
   grid-template-columns: 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw 5.4vw;
   padding: 0;
@@ -33,26 +14,6 @@ body {
   margin-left: 236px;
   padding: 18px 0;
   width: 71.2%;
-}
-@media only screen and (max-width: 800px) {
-  .display {
-    margin-top: -16rem;
-  }
-  .grid-container-main {
-    margin-top: 15rem;
-  }
-  .columns-3 {
-    grid-template-columns: auto;
-  }
-}
-
-@media only screen and (max-width: 1190px) {
-  .grid-container-main {
-    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
-  }
-  .grid-container-la {
-    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
-  }
 }
 
 button {
@@ -75,4 +36,26 @@ button:active {
 
 button:focus {
   outline-color: black;
+}
+.subscript{
+  font-size: 0.7rem;
+}
+@media only screen and (max-width: 1190px) {
+  .grid-container-main {
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+  }
+  .grid-container-la {
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .display {
+    margin-top: -16rem;
+  }
+  .grid-container-main {
+    margin-top: 15rem;
+  }
+  .columns-3 {
+    grid-template-columns: auto;
+  }
 }

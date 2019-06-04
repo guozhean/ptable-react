@@ -6,7 +6,8 @@ import "./App.css";
 const elements = elementsJSON.elements;
 
 class App extends Component {
-  state = { molecule: [], molecular_weight: 0, grams: 0, moles: 1 };
+  state = { molecule: [], molecular_weight: 0, grams: 0, moles: 1, formula: '' };
+
 
   handleInputChange = event => {
     let value = event.target.value;
@@ -46,7 +47,7 @@ class App extends Component {
 
   getformula = elements => {
     let count = {},
-      formula = "";
+      formula = '';
 
     elements.forEach(element => {
       if (!count[element.symbol]) count[element.symbol] = 1;
@@ -89,12 +90,7 @@ class App extends Component {
   };
 
   resetState = () => {
-    this.setState({
-      molecule: [],
-      formula: "",
-      molecular_weight: 0,
-      mass_composition: ""
-    });
+    this.setState({ molecule: [], molecular_weight: 0, grams: 0, moles: 1, formula: '' });
   };
 
   render() {
@@ -109,34 +105,32 @@ class App extends Component {
             element's percent composition by mass will be calculated.
           </p>
 
-          <div class="columns-3">
-            <p class="col">Formula: {this.state.formula}</p>
-            <p class="col">
+          <div>
+            <p>Formula: {this.state.formula}</p>
+            <p>
               Weight:
               {this.state.molecular_weight
                 ? this.state.molecular_weight.toFixed(3) + " g/mol"
                 : null}
             </p>
-            <p class="col">Mass Percent: {this.state.mass_composition}</p>
+            <p>Mass Percent: {this.state.mass_composition}</p>
             <div>
-              <span class="col">
-                Moles:
+              Moles:
                 <input
-                  onChange={this.inputMoles}
-                  name="moles"
-                  value={this.state.moles}
-                  type="number"
-                />
-              </span>
-              <span class="col">
-                Grams:
+                onChange={this.inputMoles}
+                name="moles"
+                value={this.state.moles}
+                type="number"
+              />
+            </div>
+            <div>
+              Grams:
                 <input
-                  onChange={this.inputGrams}
-                  name="grams"
-                  value={this.state.grams}
-                  type="number"
-                />
-              </span>
+                onChange={this.inputGrams}
+                name="grams"
+                value={this.state.grams}
+                type="number"
+              />
             </div>
           </div>
         </div>
