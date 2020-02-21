@@ -1,20 +1,14 @@
 import React, { Component } from "react";
 import elementsJSON from "./elements.json";
 import Element from "./components/Element";
+import { Container, Row, Col, Button, Form, Alert } from "react-bootstrap"
 import "./App.css";
 
 const elements = elementsJSON.elements;
 
 class App extends Component {
-  state = { molecule: [], molecular_weight: 0, grams: 0, moles: 1, formula: '' };
+  state = { molecule: [], molecular_weight: null, grams: 0, moles: 1, formula: '', mass_composition: null };
 
-
-  handleInputChange = event => {
-    let value = event.target.value;
-    const name = event.target.name;
-
-    this.setState({ [name]: value });
-  };
   inputGrams = event => {
     let value = event.target.value;
     const name = event.target.name;
@@ -22,6 +16,7 @@ class App extends Component {
     this.setState({ [name]: value });
     this.setState({ moles: value / this.state.molecular_weight });
   };
+
   inputMoles = event => {
     let value = event.target.value;
     const name = event.target.name;
@@ -90,53 +85,58 @@ class App extends Component {
   };
 
   resetState = () => {
-    this.setState({ molecule: [], molecular_weight: 0, grams: 0, moles: 1, formula: '' });
+    this.setState({ molecule: [], molecular_weight: null, grams: 0, moles: 1, formula: '', mass_composition: null });
   };
 
   render() {
     return (
-      <div className="App">
+      <Container className="App" fluid={true}>
         {/* molecule info display */}
-        <div className="display">
-          <button onClick={this.resetState}>Reset</button>
-          <h1>Periodic Table</h1>
-          <p>
+        <Row className="display">
+          <Col>
+            <h1>Periodic Table</h1>
+          </Col>
+          <Col>
+            <Button variant='danger' className='float-right' onClick={this.resetState}>Reset</Button>
+          </Col>
+        </Row>
+        <Row>
+          <Alert variant='info'>
             Click elements below to create a molecule. Molecular weight and each
             element's percent composition by mass will be calculated.
-          </p>
-
-          <div>
-            <p>Formula: {this.state.formula}</p>
-            <p>
-              Weight:
-              {this.state.molecular_weight
-                ? this.state.molecular_weight.toFixed(3) + " g/mol"
-                : null}
-            </p>
-            <p>Mass Percent: {this.state.mass_composition}</p>
-            <div>
+          </Alert>
+        </Row>
+        <Row>
+          <Col>
+            <Row>
               Moles:
-                <input
+                <Form.Control
                 onChange={this.inputMoles}
                 name="moles"
                 value={this.state.moles}
                 type="number"
               />
-            </div>
-            <div>
+            </Row>
+            <Row>
               Grams:
-                <input
+                <Form.Control
                 onChange={this.inputGrams}
                 name="grams"
                 value={this.state.grams}
                 type="number"
               />
-            </div>
-          </div>
-        </div>
+            </Row>
+          </Col>
+          <Col>
+            {this.state.formula && <p>Formula: {this.state.formula}</p>}
+            {this.state.molecular_weight && <p>Weight: {this.state.molecular_weight.toFixed(3) + " g/mol"}</p>}
+            {this.state.mass_composition && <p>Mass Percent: {this.state.mass_composition}</p>}
+          </Col>
+
+        </Row>
 
         {/* main table */}
-        <div class="ptable">
+        <Row class="ptable">
           <div class="grid-container-main">
             {elements
               .slice(0, 57)
@@ -155,8 +155,8 @@ class App extends Component {
                 <Element element={element} add={this.addtomolecule} />
               ))}
           </div>
-        </div>
-      </div>
+        </Row>
+      </Container>
     );
   }
 }
