@@ -91,8 +91,7 @@ class App extends Component {
   render() {
     return (
       <Container className="App" fluid={true}>
-        {/* molecule info display */}
-        <Row className="display">
+        <Row>
           <Col>
             <h1>Periodic Table</h1>
           </Col>
@@ -101,60 +100,58 @@ class App extends Component {
           </Col>
         </Row>
         <Row>
-          <Alert variant='info'>
-            Click elements below to create a molecule. Molecular weight and each
-            element's percent composition by mass will be calculated.
+          <Col>
+            <Alert variant='info'>
+              Click elements below to create a molecule. Molecular weight and each
+              element's percent composition by mass will be calculated.
           </Alert>
+          </Col>
         </Row>
         <Row>
           <Col>
-            <Row>
-              Moles:
-                <Form.Control
-                onChange={this.inputMoles}
-                name="moles"
-                value={this.state.moles}
-                type="number"
-              />
-            </Row>
-            <Row>
-              Grams:
-                <Form.Control
-                onChange={this.inputGrams}
-                name="grams"
-                value={this.state.grams}
-                type="number"
-              />
-            </Row>
+            Moles:
+            <Form.Control
+              onChange={this.inputMoles}
+              name="moles"
+              value={this.state.moles}
+              type="number"
+            />
+            Grams:
+            <Form.Control
+              onChange={this.inputGrams}
+              name="grams"
+              value={this.state.grams}
+              type="number"
+            />
           </Col>
           <Col>
             {this.state.formula && <p>Formula: {this.state.formula}</p>}
             {this.state.molecular_weight && <p>Weight: {this.state.molecular_weight.toFixed(3) + " g/mol"}</p>}
             {this.state.mass_composition && <p>Mass Percent: {this.state.mass_composition}</p>}
           </Col>
-
         </Row>
 
         {/* main table */}
-        <Row class="ptable">
-          <div class="grid-container-main">
+        <Row className="ptable">
+          <Col className="grid-container-main">
             {elements
               .slice(0, 57)
               .concat(elements.slice(71, 89), elements.slice(103, -1))
               .map(element => (
                 <Element element={element} add={this.addtomolecule} />
               ))}
-          </div>
-
+          </Col>
+        </Row>
+        <Row>
           {/* lanthanine series */}
-          <div class="grid-container-la">
+          <Col className="grid-container-la">
             {elements
               .slice(57, 71)
               .concat(elements.slice(89, 103))
               .map(element => (
                 <Element element={element} add={this.addtomolecule} />
               ))}
-          </div>
+          </Col>
         </Row>
       </Container>
     );
