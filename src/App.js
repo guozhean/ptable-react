@@ -142,8 +142,9 @@ class App extends Component {
               ))}
           </Col>
         </Row>
+
+        {/* lanthanine series */}
         <Row>
-          {/* lanthanine series */}
           <Col className="grid-container-la">
             {elements
               .slice(57, 71)
